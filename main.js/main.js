@@ -57,3 +57,46 @@ const montoInicial = precioPorEnvio1k * kilosPorEnvio;
 const montoFinal = aplicarDescuento(montoInicial, porcentajeDescuento);
 
 mostrarOpcionesDePago(montoFinal);
+
+const formEnvio = document.querySelector('#formEnvio')
+const inputNombrecompleto =  document.querySelector('#inputNombrecompleto')
+const inputMail = document.querySelector('#inputMail')
+const inputDireccion = document.querySelector('#inputDireccion')
+const inputLocalidad =  document.querySelector('#inputLocalidad')
+const divGuardado = document.querySelector('#guardado')
+const denvios = JSON.parse(localStorage.getItem('denvios')) || []
+
+class DireccionEnvio {
+    constructor ({nombreCompleto, mail, direccion, localidad}) {
+        this.nombreCompleto = nombreCompleto
+        this.mail = mail
+        this.direccion = direccion
+        this.localidad = localidad
+    }
+}
+
+formEnvio.onsubmit = e => {
+    e.preventDefault()
+    
+    const nombreCompleto = inputNombrecompleto.value
+    const mail = inputMail.value
+    const direccion = inputDireccion.value
+    const localidad = inputLocalidad.value
+
+    const direccionEnvio = new DireccionEnvio ({nombreCompleto, mail, direccion, localidad})
+
+    guardarDireccionEnvio(direccionEnvio)
+}
+
+function guardarDireccionEnvio (direccionEnvio) {
+    denvios.push(direccionEnvio)
+    localStorage.setItem('denvios', JSON.stringify(denvios))
+    mostrarguardado(direccionEnvio)
+}
+
+function mostrarguardado(direccionEnvio) {
+    alert('Dirección guardada: ' + direccionEnvio.direccion);
+}
+
+
+
