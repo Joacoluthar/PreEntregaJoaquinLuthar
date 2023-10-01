@@ -1,65 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Total Envios</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <h1 class="titulo">Total Envios</h1>
-    <img class="imagen" src="https://james-journey.com/wp-content/uploads/2020/09/Envios-rapidos-y-seguros-con-las-mejores-herrameintas-digitales.png" alt="Imagen envios">
+    <img class="imagen"
+        src="https://james-journey.com/wp-content/uploads/2020/09/Envios-rapidos-y-seguros-con-las-mejores-herrameintas-digitales.png"
+        alt="Imagen envios">
     <h2 class="sub-titulo">Aquí recibimos tu compra en el exterior y te la enviamos a tu casa</h2>
-    <p class="texto">Los envíos mayores a 3 kg tienen un 20% de descuento</p>
-    <p class="texto">Precio por envío $100</p>
-    <p class="texto">Precio por kilogramo $100</p>
+    <div class="texto">
+        <p>Los envíos mayores a 3 kg tienen un 20% de descuento</p>
+        <p>Precio por envío $100</p>
+        <p>Precio por kilogramo $100</p>
+    </div>
 
-    
+
     <div class="formularios">
         <h3 class="tituloFs">Prueba de costo de envío</h3>
-           <form id="formEnvio">
-        <label for="inputPesoEnvio">Peso del envío (en kilogramos):</label>
-        <input id="inputPesoEnvio" type="number" placeholder="Ingrese el peso del envío" required>
-        <input type="submit" value="Calcular Precio">
-    </form>
+        <form id="formEnvio">
+            <label for="inputPesoEnvio">Peso del envío (en kilogramos):</label>
+            <input id="inputPesoEnvio" type="number" placeholder="Ingrese el peso del envío" required>
+            <input class="boton" type="submit" value="Calcular Precio">
+        </form>
 
-    <div id="resultado"></div>
+        <div id="resultado"></div>
 
-    <form id="cuotasForm" style="display:none;">
-        <label for="inputCuotas">Selecciona la cantidad de cuotas (3, 6, 12):</label>
-        <select id="inputCuotas">
-            <option value="3">3</option>
-            <option value="6">6</option>
-            <option value="12">12</option>
-        </select>
-        <input type="submit" value="Calcular Cuotas">
-    </form>
+        <form id="cuotasForm" style="display:none;">
+            <label for="inputCuotas">Selecciona la cantidad de cuotas (3, 6, 12):</label>
+            <select id="inputCuotas">
+                <option value="3">3</option>
+                <option value="6">6</option>
+                <option value="12">12</option>
+            </select>
+            <input type="submit" value="Calcular Cuotas">
+        </form>
 
-    <div id="cuotasResultado"></div>
+        <div id="cuotasResultado"></div>
 
 
-<h4 class="tituloFs">Registra tu dirección de envío</h4>
-<form id="formDirEnvio">
-    <label for="inputNombrecompleto">Nombre Completo:</label>
-    <input id="inputNombrecompleto" type="text" placeholder="Nombre Completo" required>
+        <h4 class="tituloFs">Registra tu dirección de envío</h4>
+        <form class="direnv" id="formDirEnvio">
+            <label for="inputNombrecompleto">Nombre Completo:</label>
+            <input id="inputNombrecompleto" type="text" placeholder="Nombre Completo" required>
 
-    <label for="inputMail">Mail:</label>
-    <input id="inputMail" type="email" placeholder="Mail" required>
+            <label for="inputMail">Mail:</label>
+            <input id="inputMail" type="email" placeholder="Mail" required>
 
-    <label for="inputDireccion">Dirección:</label>
-    <input id="inputDireccion" type="text" placeholder="Dirección" required>
+            <label for="inputDireccion">Dirección:</label>
+            <input id="inputDireccion" type="text" placeholder="Dirección" required>
 
-    <label for="inputLocalidad">Localidad:</label>
-    <input id="inputLocalidad" type="text" placeholder="Localidad" required>
+            <label for="inputLocalidad">Localidad:</label>
+            <input id="inputLocalidad" type="text" placeholder="Localidad" required>
 
-    <input type="submit" value="Guardar">
-</form>
+            <input class="boton" type="submit" value="Guardar">
+        </form>
 
-<div id="guardado"></div>
+        <div class="ubicacion" id="guardado"></div>
+        <div id="resultado"></div>
+        <div id="resultado"></div>
+        <div id="mapa"></div>
+        <div class="boton"><button id="confirmarCompraBtn" style="display:none;">Confirmar Compra</button></div>
 
     </div>
- 
+
 
     <script src="main.js/main.js"></script>
 </body>
+
 </html>
